@@ -1,0 +1,554 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #070d19;
+}
+
+.terra-dashboard {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 5%;
+  background: #070d19;
+  color: #f4f7ff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* NAVIGATION */
+
+.terra-nav {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #1b2a40;
+  flex-wrap: wrap;
+}
+
+.terra-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terra-logo {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #55b8ff;
+  border-radius: 12px;
+  color: #79c8ff;
+  font-size: 25px;
+}
+
+.terra-brand h2 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 3px;
+}
+
+.terra-brand small {
+  display: block;
+  margin-top: 6px;
+  color: #7189a8;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.terra-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.terra-links button {
+  border: 0;
+  color: #a8b8ce;
+  background: transparent;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.terra-links button:hover {
+  color: #80caff;
+}
+
+/* HERO */
+
+.terra-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 45px 2% 50px;
+  border-bottom: 1px solid #1b2a40;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.terra-label {
+  color: #76c9a9;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #62e5b0;
+  box-shadow: 0 0 12px #62e5b0;
+  margin-right: 8px;
+}
+
+.terra-hero h1 {
+  font-size: clamp(36px, 4.5vw, 63px);
+  line-height: 1.15;
+  margin: 28px 0;
+  letter-spacing: -2px;
+}
+
+.terra-hero h1 span {
+  color: #83c8ff;
+}
+
+.terra-hero p {
+  color: #9aacc5;
+  line-height: 1.9;
+  max-width: 570px;
+  font-size: 15px;
+}
+
+.terra-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.terra-actions button {
+  padding: 15px 22px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.primary-action {
+  background: #a6d9ff;
+  color: #07111f;
+  border: 1px solid #a6d9ff;
+}
+
+.secondary-action {
+  background: #111f33;
+  color: #dcecff;
+  border: 1px solid #38516e;
+}
+
+/* CINEMATIC PLANET AREA */
+
+.hero-space {
+  height: 480px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 52% 43%, #14263e 0%, #091322 48%, #070d19 78%);
+}
+
+.space-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20% 25%, #ffffffaa 50%, transparent 100%),
+    radial-gradient(1px 1px at 75% 18%, #ffffff99 50%, transparent 100%),
+    radial-gradient(2px 2px at 65% 75%, #ffffff88 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, #ffffff99 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 55%, #ffffff88 50%, transparent 100%);
+  background-size: 180px 150px;
+}
+
+.hero-earth {
+  position: absolute;
+  width: 350px;
+  height: 360px;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 35px #7cbcff55);
+}
+
+.hero-earth > div,
+.hero-moon > div,
+.hero-mars > div {
+  width: 100%;
+  height: 360px;
+}
+
+.hero-moon {
+  position: absolute;
+  width: 145px;
+  height: 150px;
+  left: 2%;
+  top: 85px;
+  z-index: 3;
+  transform: scale(0.55);
+  transform-origin: center;
+  filter: drop-shadow(0 0 22px #d8e6ff66);
+}
+
+.hero-mars {
+  position: absolute;
+  width: 150px;
+  height: 155px;
+  right: -1%;
+  bottom: 50px;
+  z-index: 3;
+  transform: scale(0.55);
+  transform-origin: center;
+  filter: drop-shadow(0 0 22px #ff874866);
+}
+
+/* ORBITAL PATHS */
+
+.hero-orbit {
+  position: absolute;
+  border: 1px solid #4a8cba66;
+  border-radius: 50%;
+  left: 50%;
+  top: 48%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 470px;
+  height: 175px;
+  transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+.orbit-two {
+  width: 420px;
+  height: 220px;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.orbit-three {
+  width: 510px;
+  height: 290px;
+  transform: translate(-50%, -50%) rotate(75deg);
+  border-color: #2f689566;
+}
+
+.planet-tag {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 13px;
+  background: #0a1424dd;
+  border: 1px solid #38516e;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.planet-tag small {
+  color: #80a5cc;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.planet-tag strong {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.earth-tag {
+  top: 50px;
+  right: 8px;
+}
+
+.moon-tag {
+  left: 0;
+  bottom: 100px;
+}
+
+.mars-tag {
+  right: 0;
+  bottom: 35px;
+}
+
+.space-caption {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #8fb9e1;
+  font-size: 9px;
+  letter-spacing: 3px;
+  z-index: 5;
+}
+
+/* RESEARCH PANELS */
+
+.terra-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 28px 0;
+}
+
+.stat-card {
+  position: relative;
+  background: linear-gradient(145deg, #13243a, #0c1728);
+  border: 1px solid #233852;
+  border-radius: 14px;
+  padding: 24px 18px;
+  min-height: 160px;
+}
+
+.stat-card small {
+  color: #82a9d4;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.stat-card h2 {
+  margin: 15px 0 8px;
+  font-size: 25px;
+}
+
+.stat-card p {
+  color: #829ab8;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.stat-icon {
+  float: left;
+  margin-right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+
+.blue-icon {
+  background: #183655;
+  color: #73c6ff;
+}
+
+.purple-icon {
+  background: #33254c;
+  color: #c19aff;
+}
+
+.green-icon {
+  background: #173b34;
+  color: #71e2b7;
+}
+
+.orange-icon {
+  background: #483021;
+  color: #ffb26e;
+}
+
+/* PLANET EXPLORER */
+
+.planet-explorer {
+  padding: 55px 0;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+}
+
+.section-heading small {
+  color: #79c8ff;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+.section-heading h2 {
+  font-size: 29px;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: #91a8c4;
+}
+
+.planet-tabs {
+  display: flex;
+  gap: 12px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.planet-tabs button {
+  padding: 12px 24px;
+  color: #c6d7eb;
+  background: #142239;
+  border: 1px solid #304762;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.planet-tabs button.active {
+  border: 2px solid #6fc3ff;
+  color: white;
+  background: #1c3553;
+}
+
+.selected-planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  background: #101d30;
+  border: 1px solid #243b57;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.planet-view {
+  width: 100%;
+  min-width: 0;
+  height: 360px;
+  overflow: hidden;
+}
+
+.planet-view > div {
+  width: 100%;
+  height: 360px;
+}
+
+.planet-view canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.selected-planet-info small {
+  color: #79c8ff;
+}
+
+.selected-planet-info h3 {
+  font-size: 30px;
+}
+
+.selected-planet-info p {
+  color: #9aacc5;
+  line-height: 1.8;
+}
+
+.explorer-status {
+  color: #71dcb0;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+}
+
+/* FOOTER */
+
+.terra-footer {
+  border-top: 1px solid #1b2a40;
+  padding: 25px 0;
+  color: #748ba8;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .terra-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-space {
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .terra-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .terra-dashboard {
+    padding: 0 16px;
+  }
+
+  .terra-nav {
+    padding: 15px 0;
+  }
+
+  .terra-links button {
+    padding: 8px;
+  }
+
+  .terra-hero {
+    padding: 35px 0;
+  }
+
+  .terra-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-space {
+    height: 360px;
+  }
+
+  .hero-earth {
+    width: 270px;
+    top: 0;
+  }
+
+  .hero-moon {
+    left: -30px;
+  }
+
+  .hero-mars {
+    right: -35px;
+  }
+
+  .hero-orbit {
+    transform-origin: center;
+  }
+
+  .selected-planet {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-view {
+    height: 320px;
+  }
+}
