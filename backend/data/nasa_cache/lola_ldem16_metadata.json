@@ -1,0 +1,46 @@
+{
+  "dataset_id": "LRO-L-LOLA-4-GDR-V1.0",
+  "dataset_name": "Lunar Orbiter Laser Altimeter Global Digital Elevation Model",
+  "source": "NASA PDS / LOLA Team",
+  "planet": "Moon",
+  "instrument": "LOLA",
+  "product_id": "LDEM_16",
+  "product_type": "Elevation DEM",
+  "files": {
+    "raster": "ldem_16.tif",
+    "original_image": "ldem_16.img",
+    "label": "ldem_16.lbl",
+    "xml": "ldem_16.xml"
+  },
+  "format": "GeoTIFF",
+  "width": 5760,
+  "height": 2880,
+  "bands": 1,
+  "data_type": "float32",
+  "elevation_unit": "meters",
+  "scale_factor_applied": 0.5,
+  "reference_radius_m": 1737400,
+  "projection": "Simple Cylindrical",
+  "coordinate_system": "Mean Earth/Polar Axis of DE421",
+  "longitude_direction": "East",
+  "center_longitude": 180,
+  "center_latitude": 0,
+  "resolution_degrees": 0.0625,
+  "resolution_meters_per_pixel": 1895.21,
+  "elevation_statistics": {
+    "minimum_m": -8981.5,
+    "maximum_m": 10685.5,
+    "mean_m": -519.2021484375
+  },
+  "status": "processed"
+  ,
+"crs": {
+    "type": "Geographic",
+    "body": "Moon",
+    "datum": "Mean Earth/Polar Axis of DE421",
+    "reference_radius_m": 1737400,
+    "longitude_direction": "East",
+    "authority": "Custom lunar CRS"
+}
+
+}

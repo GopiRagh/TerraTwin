@@ -1,0 +1,42 @@
+{
+    "dataset_id": "MRO-M-HIRISE-5-DTM-V1.0",
+    "dataset_name": "HiRISE Digital Terrain Model",
+    "planet": "Mars",
+    "source": "NASA PDS / University of Arizona",
+    "raster": {
+        "filename": "DTEEC_034934_2155_034499_2155_A01.tif",
+        "width": 7302,
+        "height": 9768,
+        "bands": 1,
+        "data_type": "float32",
+        "crs": "PROJCS[\"EQUIRECTANGULAR MARS\",GEOGCS[\"GCS_MARS\",DATUM[\"D_MARS\",SPHEROID[\"MARS_localRadius\",3389574.3490888,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",35],PARAMETER[\"central_meridian\",327.92],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "bounds": {
+            "left": -3638.0845204984084,
+            "bottom": 2080005.5564293829,
+            "right": 3692.2943891815344,
+            "top": 2089811.5193422497
+        },
+        "resolution": {
+            "x": 1.0038864570912,
+            "y": 1.0038864570912
+        }
+    },
+    "elevation_features": {
+        "unit": "meters",
+        "minimum": -4660.138671875,
+        "maximum": -4068.97509765625,
+        "mean": -4204.744214681562,
+        "standard_deviation": 66.3980164136673
+    },
+    "data_quality": {
+        "total_pixels": 71325936,
+        "valid_pixels": 50214469,
+        "nodata_pixels": 21111467,
+        "valid_percentage": 70.4014161132074,
+        "nodata_percentage": 29.598583886792596
+    },
+    "processing": {
+        "method": "Block-wise raster statistics",
+        "status": "success"
+    }
+}

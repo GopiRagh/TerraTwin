@@ -1,0 +1,23 @@
+{
+  "planet": "Mars",
+  "location": "Jezero Crater",
+  "coordinates": {
+    "longitude": 77.69,
+    "latitude": 18.41
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": -2699.0,
+    "maximum": -2568.0,
+    "area_weighted_mean": -2639.4007013540318,
+    "area_weighted_standard_deviation": 35.47693645715036
+  },
+  "data_quality": {
+    "selected_pixels": 26,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "MGS MOLA MEGDR",
+    "source_raster": "megt90n000eb.tif",
+    "limitation": "NASA reports that bins without direct observations contain interpolated elevations"
+  }
+}

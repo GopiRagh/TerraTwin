@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Pico Basilé",
+  "region_type": "Volcanic highlands",
+  "coordinates": {
+    "longitude": 8.767,
+    "latitude": 3.583
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 187.0459747314453,
+    "maximum": 3006.335205078125,
+    "area_weighted_mean": 1325.5118472358386,
+    "area_weighted_standard_deviation": 603.5647753109247
+  },
+  "data_quality": {
+    "selected_pixels": 329946,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "nodata_limitation": "Zero elevation samples were excluded as ocean in the volcanic island tile; the source tile has no explicit NoData value.",
+    "source_raster": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif"
+  }
+}

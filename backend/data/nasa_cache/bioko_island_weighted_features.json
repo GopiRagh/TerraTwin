@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Bioko Island",
+  "region_type": "Volcanic island terrain",
+  "coordinates": {
+    "longitude": 8.7,
+    "latitude": 3.5
+  },
+  "radius_km": 10,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 23.73715591430664,
+    "maximum": 2594.629150390625,
+    "area_weighted_mean": 841.244214898125,
+    "area_weighted_standard_deviation": 520.9644684528381
+  },
+  "data_quality": {
+    "selected_pixels": 329907,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "source_raster": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "nodata_limitation": "No explicit NoData value assigned in the GeoTIFF metadata; raster validity mask used"
+  }
+}

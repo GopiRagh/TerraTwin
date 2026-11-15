@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Atacama Desert",
+  "region_type": "Hyper-arid desert",
+  "coordinates": {
+    "longitude": -69.5,
+    "latitude": -23.5
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 1491.1656494140625,
+    "maximum": 2129.732177734375,
+    "area_weighted_mean": 1730.4382596332007,
+    "area_weighted_standard_deviation": 110.54478976718386
+  },
+  "data_quality": {
+    "selected_pixels": 359055,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "source_raster": "Copernicus_DSM_COG_10_S24_00_W070_00_DEM.tif",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "nodata_limitation": "No explicit NoData value assigned in the GeoTIFF metadata; raster validity mask used"
+  }
+}

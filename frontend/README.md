@@ -1,16 +1,29 @@
-# React + Vite
+# TerraTwin frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React and Vite client for the TerraTwin FastAPI service.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Start the FastAPI data service from the `backend` directory in one terminal:
 
-## React Compiler
+```bash
+python -m uvicorn app.main:app --reload
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Start the AI service from `ai-assistant` in a second terminal. Copy `.env.example` to `.env` and set `GEMINI_API_KEY`:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm start
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install and start the frontend from `frontend` in a third terminal:
+
+```bash
+npm install
+npm run dev
+```
+
+Vite proxies `/api/*` and `/health` to `http://127.0.0.1:8000` and `/assistant-api/*` to the AI service at `http://127.0.0.1:5001` during development. Set `VITE_API_BASE_URL` and `VITE_ASSISTANT_API_URL` to their service origins when deploying separately.
+
+The dashboard loads planets, locations and the dataset catalogue from the API. The analog form posts to `/api/analyze/compare`. Comparison data is available only for supported sites that have feature files in `backend/data/nasa_cache`.

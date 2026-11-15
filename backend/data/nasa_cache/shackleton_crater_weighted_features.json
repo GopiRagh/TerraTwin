@@ -1,0 +1,23 @@
+{
+  "planet": "Moon",
+  "location": "Shackleton Crater",
+  "coordinates": {
+    "longitude": 129.78,
+    "latitude": -89.67
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": -2793.5,
+    "maximum": 1576.0,
+    "area_weighted_mean": -681.3155210179555,
+    "area_weighted_standard_deviation": 1222.1129715347047
+  },
+  "data_quality": {
+    "selected_pixels": 19313,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "NASA PDS / LOLA",
+    "source_raster": "ldem_16.tif",
+    "nodata_limitation": "No explicit NoData constant identified in the supplied PDS label"
+  }
+}

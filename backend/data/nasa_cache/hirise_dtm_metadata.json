@@ -1,0 +1,47 @@
+
+{
+  "dataset_id": "MRO-M-HIRISE-5-DTM-V1.0",
+  "dataset_name": "HiRISE Digital Terrain Model",
+  "source": "NASA PDS / University of Arizona",
+  "planet": "Mars",
+  "instrument": "HiRISE",
+  "product_type": "Elevation DTM",
+  "product_id": "DTEEC_034934_2155_034499_2155_A01",
+  "files": {
+    "raster": "DTEEC_034934_2155_034499_2155_A01.tif",
+    "original_image": "DTEEC_034934_2155_034499_2155_A01.IMG",
+    "label": "Embedded PDS3 label"
+  },
+  "format": "GeoTIFF",
+  "width": 7302,
+  "height": 9768,
+  "bands": 1,
+  "data_type": "float32",
+  "elevation_unit": "meters",
+  "spatial_reference": {
+    "coordinate_system": "Planetocentric",
+    "projection": "Equirectangular",
+    "planetary_radius_m": 3389574.3490888,
+    "center_latitude": 35.0,
+    "center_longitude": 327.92,
+    "positive_longitude_direction": "East"
+  },
+  "projected_bounds_m": {
+    "west": -3638.0845204984084,
+    "south": 2080005.5564293829,
+    "east": 3692.2943891815344,
+    "north": 2089811.5193422497
+  },
+  "resolution_m": {
+    "x": 1.0038864570912,
+    "y": 1.0038864570912
+  },
+  "elevation_statistics": {
+    "minimum_m": -4660.138671875,
+    "maximum_m": -4068.97509765625,
+    "mean_m": -4204.744214681193,
+    "standard_deviation_m": 66.39801641386218
+  },
+  "nodata": -3.4028226550889045e+38,
+  "status": "processed"
+}

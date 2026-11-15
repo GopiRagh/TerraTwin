@@ -1,0 +1,42 @@
+{
+    "dataset_id": "EARTH_COPERNICUS_GLO30_001",
+    "dataset_name": "Copernicus DEM GLO-30",
+    "planet": "Earth",
+    "source": "ESA Copernicus",
+    "raster": {
+        "filename": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif",
+        "width": 3600,
+        "height": 3600,
+        "bands": 1,
+        "data_type": "float32",
+        "crs": "EPSG:4326",
+        "bounds": {
+            "left": 7.9998611111111115,
+            "bottom": 3.0001388888888885,
+            "right": 8.999861111111112,
+            "top": 4.0001388888888885
+        },
+        "resolution": {
+            "x": 0.0002777777777777778,
+            "y": 0.0002777777777777778
+        }
+    },
+    "elevation_features": {
+        "unit": "meters",
+        "minimum": 0.0,
+        "maximum": 3006.335205078125,
+        "mean": 101.40857507594379,
+        "standard_deviation": 322.2329038768751
+    },
+    "data_quality": {
+        "total_pixels": 12960000,
+        "valid_pixels": 12960000,
+        "nodata_pixels": 0,
+        "valid_percentage": 100.0,
+        "nodata_percentage": 0.0
+    },
+    "processing": {
+        "method": "Block-wise raster statistics",
+        "status": "success"
+    }
+}

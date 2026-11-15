@@ -1,0 +1,27 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local development and generated files
+**/venv/
+**/.venv/
+**/node_modules/
+**/dist/
+**/__pycache__/
+**/.pytest_cache/
+backend/logs/
+*.log
+*.py[cod]
+.DS_Store
+
+# Keep source rasters out of Git; prepared JSON features and small GeoTIFFs
+# remain shareable. Original PDS images can be several hundred megabytes.
+backend/data/nasa_cache/*.IMG
+backend/data/nasa_cache/*.img
+backend/data/nasa_cache/*.aux.xml
+backend/data/nasa_cache/DTEEC_034934_2155_034499_2155_A01.tif
+backend/data/nasa_cache/*.tif

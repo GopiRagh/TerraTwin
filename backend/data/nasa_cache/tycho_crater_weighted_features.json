@@ -1,0 +1,23 @@
+{
+  "planet": "Moon",
+  "location": "Tycho Crater",
+  "coordinates": {
+    "longitude": 348.78,
+    "latitude": -43.3
+  },
+  "radius_km": 10,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": -3461.0,
+    "maximum": -1335.0,
+    "area_weighted_mean": -2999.6283242218433,
+    "area_weighted_standard_deviation": 495.79169746791337
+  },
+  "data_quality": {
+    "selected_pixels": 122,
+    "weighting": "Cosine of pixel-centre latitude",
+    "nodata_limitation": "No explicit NoData constant identified in the supplied PDS label",
+    "source": "NASA PDS / LOLA",
+    "source_raster": "ldem_16.tif"
+  }
+}

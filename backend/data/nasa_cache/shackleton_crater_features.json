@@ -1,0 +1,36 @@
+{
+    "dataset_id": "LRO-L-LOLA-4-GDR-V1.0",
+    "dataset_name": "LOLA Global Elevation DEM",
+    "planet": "Moon",
+    "location": "Shackleton Crater",
+    "region": {
+        "center_longitude": 129.78,
+        "center_latitude": -89.67,
+        "radius_km": 10.0,
+        "distance_method": "Great-circle distance",
+        "reference_radius_m": 1737400.0
+    },
+    "elevation_features": {
+        "unit": "meters",
+        "minimum": -2793.5,
+        "maximum": 1576.0,
+        "mean": -369.5572153471755,
+        "standard_deviation": 1259.4019254270781
+    },
+    "data_quality": {
+        "valid_pixels": 19313,
+        "nodata_policy": "No explicit NoData value assigned; non-finite values excluded"
+    },
+    "source": {
+        "raster": "ldem_16.tif",
+        "resolution_degrees": [
+            0.0625,
+            0.0625
+        ],
+        "nominal_resolution_m": 1895.21
+    },
+    "processing": {
+        "status": "success",
+        "method": "Regional spherical distance extraction"
+    }
+}

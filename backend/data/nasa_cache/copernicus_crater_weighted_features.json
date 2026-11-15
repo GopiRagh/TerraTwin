@@ -1,0 +1,23 @@
+{
+  "planet": "Moon",
+  "location": "Copernicus Crater",
+  "coordinates": {
+    "longitude": 339.92,
+    "latitude": 9.62
+  },
+  "radius_km": 10,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": -3558.5,
+    "maximum": -2786.5,
+    "area_weighted_mean": -3368.2360537623526,
+    "area_weighted_standard_deviation": 180.96303034254103
+  },
+  "data_quality": {
+    "selected_pixels": 87,
+    "weighting": "Cosine of pixel-centre latitude",
+    "nodata_limitation": "No explicit NoData constant identified in the supplied PDS label",
+    "source": "NASA PDS / LOLA",
+    "source_raster": "ldem_16.tif"
+  }
+}

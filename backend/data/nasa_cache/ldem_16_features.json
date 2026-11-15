@@ -1,0 +1,42 @@
+{
+    "dataset_id": "LRO-L-LOLA-4-GDR-V1.0",
+    "dataset_name": "Lunar Orbiter Laser Altimeter Global Digital Elevation Model",
+    "planet": "Moon",
+    "source": "NASA PDS / LOLA Team",
+    "raster": {
+        "filename": "ldem_16.tif",
+        "width": 5760,
+        "height": 2880,
+        "bands": 1,
+        "data_type": "float32",
+        "crs": "GEOGCS[\"unknown\",DATUM[\"unknown\",SPHEROID[\"unknown\",1737400,0]],PRIMEM[\"Reference meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+        "bounds": {
+            "left": 0.0,
+            "bottom": -90.0,
+            "right": 360.0,
+            "top": 90.0
+        },
+        "resolution": {
+            "x": 0.0625,
+            "y": 0.0625
+        }
+    },
+    "elevation_features": {
+        "unit": "meters",
+        "minimum": -8981.5,
+        "maximum": 10685.5,
+        "mean": -519.2021854504244,
+        "standard_deviation": 2203.904412919551
+    },
+    "data_quality": {
+        "total_pixels": 16588800,
+        "valid_pixels": 16588800,
+        "nodata_pixels": 0,
+        "valid_percentage": 100.0,
+        "nodata_percentage": 0.0
+    },
+    "processing": {
+        "method": "Block-wise raster statistics",
+        "status": "success"
+    }
+}

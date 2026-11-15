@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Gran Caldera de Luba",
+  "region_type": "Volcanic caldera",
+  "coordinates": {
+    "longitude": 8.5089,
+    "latitude": 3.3569
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 1.112129807472229,
+    "maximum": 2265.93115234375,
+    "area_weighted_mean": 791.2211573662471,
+    "area_weighted_standard_deviation": 478.22330922317735
+  },
+  "data_quality": {
+    "selected_pixels": 329413,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "source_raster": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif",
+    "nodata_limitation": "Zero elevation samples were excluded as ocean; the source tile has no explicit NoData value."
+  }
+}

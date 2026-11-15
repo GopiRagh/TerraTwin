@@ -1,0 +1,42 @@
+
+{
+  "dataset_id": "EARTH_COPERNICUS_GLO30_001",
+  "dataset_name": "Copernicus DEM GLO-30",
+  "source": "ESA Copernicus",
+  "planet": "Earth",
+  "instrument": "Not applicable",
+  "product_type": "Digital Surface Model",
+  "files": {
+    "raster": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif",
+    "label": null,
+    "original_image": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif"
+  },
+  "format": "GeoTIFF",
+  "width": 3600,
+  "height": 3600,
+  "bands": 1,
+  "data_type": "float32",
+  "elevation_unit": "meters",
+  "spatial_reference": {
+    "coordinate_system": "Geographic",
+    "projection": "Geographic latitude-longitude",
+    "crs": "EPSG:4326"
+  },
+  "geographic_bounds": {
+    "west": 7.9998611111,
+    "south": 3.0001388889,
+    "east": 8.9998611111,
+    "north": 4.0001388889
+  },
+  "resolution_degrees": {
+    "longitude": 0.0002777778,
+    "latitude": 0.0002777778
+  },
+  "approximate_resolution_m": 30,
+  "elevation_statistics": {
+    "minimum_m": 0.0,
+    "maximum_m": 3006.3352
+  },
+  "nodata": null,
+  "status": "processed"
+}

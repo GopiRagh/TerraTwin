@@ -1,0 +1,23 @@
+{
+  "planet": "Mars",
+  "location": "Hellas Planitia",
+  "coordinates": {
+    "longitude": 70.0,
+    "latitude": -42.66
+  },
+  "radius_km": 10,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": -6888.0,
+    "maximum": -5993.0,
+    "area_weighted_mean": -6578.050528020831,
+    "area_weighted_standard_deviation": 256.79532015042236
+  },
+  "data_quality": {
+    "selected_pixels": 30,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "MGS MOLA MEGDR",
+    "limitation": "NASA reports that bins without direct observations contain interpolated elevations",
+    "source_raster": "megt90n000eb.tif"
+  }
+}

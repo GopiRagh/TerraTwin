@@ -1,0 +1,707 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en"  style="border-collapse:collapse">
+<head><title>
+	Mars Orbital Data Explorer - I56585002PBT Data Product
+</title><meta name="robots" content="nofollow" /><meta name="googlebot" content="nofollow" />        
+    <script type="text/javascript" src="asperaProductDownload/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="//d3gcli72yxqn2z.cloudfront.net/connect/v4/connectinstaller-4.min.js"></script>
+    <script type="text/javascript" src="//d3gcli72yxqn2z.cloudfront.net/connect/v4/asperaweb-4.min.js"></script>
+    <script type="text/javascript" src="asperaProductDownload/productdetail_application.js"></script>
+    
+    <link rel="stylesheet" href="StyleRefresh.css" type="text/css" /><link type="text/css" rel="stylesheet" href="Styles/fa/fontawesome-pro-light.css" /><link type="text/css" rel="stylesheet" href="Styles/fa/fontawesome-pro-core.css" /><link type="text/css" rel="stylesheet" href="Styles/fa/fontawesome-pro-solid.css" />
+    <script type="text/javascript" language="JavaScript">
+
+        function callResultListAdd() {
+            jsParentPageName = '';
+            //alert('callResultListAdd ' + jsParentPageName); //doesn't account for product only frame
+            try {
+                if (jsParentPageName.toLowerCase().startsWith("indexproductpage.aspx")) {
+                    setTimeout(function () { parent.cartUpdate(); }, 10);
+                }
+                else {
+                    if (jsParentPageName === 'ode_map.aspx') {
+                            parent.resultsIFrame.fromProductDetail('add', 'I56585002PBT', '25588707');
+                    }
+                    else {
+                            parent.list.fromProductDetail('add', 'I56585002PBT', '25588707');
+                    }
+                    setTimeout(function () { parent.parent.cartUpdate(); }, 5);
+                }
+                
+            }
+            catch(err) {
+                //we do nothing alert('callResultListAdd() - error: ' + err.message);
+            }
+        }
+
+        function callResultListRemove() {
+            jsParentPageName = '';
+            try {
+                if (jsParentPageName.toLowerCase().startsWith("indexproductpage.aspx")) {
+                    setTimeout(function () { parent.cartUpdate(); }, 5);
+                }
+                else {
+                    if (jsParentPageName === 'ode_map.aspx') {
+                        parent.resultsIFrame.fromProductDetail('remove', 'I56585002PBT', '25588707');
+                    }
+                    else {
+                        parent.list.fromProductDetail('remove', 'I56585002PBT', '25588707');
+                    }
+
+                    setTimeout(function () { parent.parent.cartUpdate(); }, 5);
+                }
+            }
+            catch (err) {
+                //we do nothing alert('callResultListAdd() - error: ' + err.message);
+            }
+        }    	
+
+        function setInCartStatus() {
+            var inCart = arguments[0].toString();
+            if (inCart.toString() === 'true') {
+                document.getElementById('trProductInCart').style.display = "";
+                document.getElementById('btnAddProductToCart').disabled = true;
+                document.getElementById('btnRemoveFromCart').disabled = false;
+                try
+                {
+                    var clickEvent = document.getElementById('btnRemoveFromCart').onclick.toString();
+                }
+                catch (err) {
+                    document.getElementById('btnRemoveFromCart').onclick = callResultListRemove;
+                }
+            }
+            else {
+                document.getElementById('trProductInCart').style.display = "none";
+                document.getElementById('btnAddProductToCart').disabled = false;
+                document.getElementById('btnRemoveFromCart').disabled = true;
+                try {
+                    var clickEvent = document.getElementById('btnAddProductToCart').onclick.toString();
+                }
+                catch (err) {
+                    document.getElementById('btnAddProductToCart').onclick = callResultListAdd;
+                }
+            }
+        }
+      	
+		            function localResize() 
+		            {
+		                var getSrc = document.getElementById('ToggleCell').style.backgroundImage;
+		                //alert(getSrc);
+		                getSrc = getSrc.replace('url("', '').replace('"','').trim();
+	                    if(Right(getSrc, 18) == "collapse_left.gif)") {
+		                    document.getElementById('ToggleCell').style.backgroundImage = "url(images/expand_right.gif)"; 
+		                    window.parent.ReSizeColumns(2);
+	                    }
+	                    else {
+                            document.getElementById('ToggleCell').style.backgroundImage = "url(images/collapse_left.gif)";
+                            window.parent.ReSizeColumns(1);
+                        }
+                    }
+                    
+                    function Right(str, n){
+                        if (n <= 0)
+                           return "";
+                        else if (n > String(str).length)
+                           return str;
+                        else {
+                           var iLen = String(str).length;
+                           return String(str).substring(iLen, iLen - n);
+                        }
+                    }
+
+                    function Left(str, n){
+	                    if (n <= 0)
+	                        return "";
+	                    else if (n > String(str).length)
+	                        return str;
+	                    else
+	                        return String(str).substring(0,n);
+                    }		
+                    
+   		            function OpenNew(link) 
+			        {
+				        var surl = link;
+				        window.open(surl);
+				    }
+
+				    // added dms 1/25/10
+				    //this function is called by featureTypeChanged() and featureChanged()
+				    //Used for AJAX interaction        
+				    function GetXmlHttpObject() {
+				        if (window.XMLHttpRequest) {
+				            // code for IE7+, Firefox, Chrome, Opera, Safari
+				            return new XMLHttpRequest();
+				        }
+				        if (window.ActiveXObject) {
+				            // code for IE6, IE5
+				            return new ActiveXObject("Microsoft.XMLHTTP");
+				        }
+				        return null;
+				    }    
+
+				    // added dms 2/25/15
+				    // this method will record the action (error) that occurred
+				    function recordAct(webPage, actionType, actionDetail, email, sql, trackerMisc) {
+				        xmlhttp = GetXmlHttpObject();
+				        if (xmlhttp == null) {
+				            alert("Your browser does not support AJAX!");
+				            // we do nothing
+				            return;
+				        }
+				        var url = "map/activitylink.aspx";
+				        url = url + "?webpage=" + webPage;
+				        url = url + "&actiontype=" + actionType;
+				        url = url + "&actiondetail=" + actionDetail;
+				        url = url + "&email=" + email;
+				        url = url + "&sql=" + sql;
+				        url = url + "&trackerMisc=" + document.getElementById('lblHostInstProdType').innerHTML
+				        //alert(url);
+				        xmlhttp.open("GET", url, true);
+				        xmlhttp.send(null);
+				    }
+    </script>				    
+    <link type="text/css" rel="stylesheet" href="Styles/odeCommon.css" /><link type="text/css" rel="stylesheet" href="Styles/odeModern.css?v=20" /><link type="text/css" rel="stylesheet" href="Styles/odeFeedback.css" />
+    <script type="text/javascript" src="Scripts/odeFeedback.js"></script>
+	</head>
+	<body class="odeReflow" bgcolor="black"  leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+<!--onactivate="window.parent.ReSizeColumns(2)"-->
+    <form name="form1" method="post" action="./productDetail.aspx?product_idgeo=25588707&amp;option=hideResize" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/mars/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvu9JuNOAbZj39ECVMbjC2KzGX1oAe_Cip8O_L_reYwJuHvPDfbrAYR7yM-K9-mhVGR4YND0QZq4DQMEKt607gTM-l6YF-pxiXHYwxcv_PGi7rT6PF7E3Uh2WhKskKGu2OlqbQKs1&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="88BC80AC" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="x5jhscnhT5nPpPZDV6xfYIw3KvV/tzQDuC3bdGpYT3HRZhtYaQB1T+pn8GlVx2f0onTsnWobKXA8cR7TfcZe+/i0YjL+XrKibRJidnWiGKeQVLwLkN38lBvm5Zi0wpuK82ypE4P1p0aIOsMJebJVYq9dkDLKuzRT0Q+hpuzYuQJthOhzSJmyl8xCKya1naKZLtlNV3IbzLwaksZyXwAxWLCkMkTDtFUWsOUemHnbfPWAOauIPZ1DdbNDUKmN+0ifMf9DkM7YuZo59/EnVMt5fKFAlI4b3JGWBr+LU7Zvq4fSFO6S31DyL9XrxBefYIWCac+iuJudX1Gr3t8KRZkxvlimU6s=" />
+<div role="main">
+  
+ <div id="UpdatePanel2">
+	   
+       
+       <div id="UpdateProgress1" style="display:none;">
+		
+                <div align="center"   
+                        style="display: block;
+                                background:white;
+                                left: 0px;
+                                position:absolute;
+                                top: 0px;
+                                padding-right: 1px;
+                                padding-left: 1px;
+                                z-index: 3;
+                                float:none; 
+                                border:none;
+                                filter:alpha(opacity=15);
+                                -moz-opacity:.15;
+                                opacity:.15;                                 
+                                 height: 90%;
+                                 width: 90%;
+                                     cursor:wait;
+                                 " >
+                </div>        
+           
+               <div align="center"
+                        style="display: block;
+                                background:white;
+                                left: 100px;
+                                position: absolute;
+                                top: 100px;
+                                padding-right: 1px;
+                                padding-left: 1px;
+                                z-index: 4;
+                                float: left; 
+                                 border:#E0E0E0 thin solid;
+                                filter:alpha(opacity=90);
+                                -moz-opacity:.90;
+                                opacity:.90; 
+                                     cursor:wait;                                                       
+                                 " >
+
+                <table height="400" width="400">
+                    <tr valign="middle" align="center">
+                        <td>Processing Request ... <img alt="loading" src="images/ajax-loader.gif" /></td>
+                    </tr>
+                </table>
+
+                </div>
+               
+           
+	</div>
+                           
+        
+       <!-- height:30px;-->
+            
+    <table>
+    <tr>
+        <td height="4" width="525" align="left" style="background-color:#E0E0E0;border-color:#E0E0E0;border-width:0px;border-style:None;padding-bottom:3px;padding-left:3px;padding-right:3px;padding-top:3px;">
+            <h1 class="odePageTitle" style="padding-left:4px;">
+            
+            <span id="lblProduct_id_display">I56585002PBT</span>
+            
+            
+              
+            </h1>
+            <span id="lblMissionInstrProdType" title="2001 Mars Odyssey Orbiter - Thermal Emission Imaging System - PDS3 Infrared Projected Brightness Temperature Image">&nbsp;<b>ODY THEMIS PDS3 Infrared Projected Brightness Temperature Image (IRPBT2) (Derived Data)</b><br/></span>
+            
+            
+             
+              <div id="divShareLinks" class="odeSharePop" style="display:none;border-style:solid; float:right; border-width:2px; background-color:#d9d9d9; width: 300px; z-index:100; position:absolute; top:30px; left:240px;height:100px;">
+                <div style="padding: 3px 3px 3px 3px;">
+                    <button type="button" class="odeFb-close" onclick="toggleShareWindow();" title="Close" aria-label="Close sharing options"><i class="fal fa-times" aria-hidden="true"></i></button>
+                    <span class="odeSharePop-title" style="font-weight:bold; font-size:larger;">Share this PDS Product</span>
+                </div>
+                <hr/>
+                <div style="padding: 3px 3px 3px 8px; width:155px;" >                  
+                    <a href="mailto:?subject=Mars%20ODE%20Product%20Link%20I56585002PBT&amp;body=Here%20is%20the%20ODE%20product%20link%20for%20Product%20ID%20I56585002PBT:%20https://ode.rsl.wustl.edu/mars/indexproductpage.aspx?product_idgeo=25588707%26product_id=I56585002PBT" id="aEmailLink" style="padding-bottom:5px;display:block;" target="_blank"><i class="fal fa-envelope" aria-hidden="true"></i> Send link via email</a>    
+                    <a id="aCopyToClipboard" style="padding-bottom:5px;display:block;text-decoration: underline;cursor:pointer;" onclick="CopyToClipBoard(&#39;https://ode.rsl.wustl.edu/mars/indexproductpage.aspx?product_idgeo=25588707&amp;product_id=I56585002PBT&#39;)"><i class="fal fa-copy" aria-hidden="true"></i> Copy to clipboard</a> 
+                    <input type="text" value="3" id="myInput" style="width:3px;display:none;" /><button style="display:none;" onclick="myFunction('test')">test</button>
+        <!-- style="display:none;" -->
+                <a href="https://ode.rsl.wustl.edu/mars/indexproductpage.aspx?product_idgeo=25588707&product_id=I56585002PBT" id="aNewWindow" style="padding-bottom:5px;display:block;" target="_blank">
+                   <i class="fal fa-external-link" aria-hidden="true"></i> Open in a new window<span class="sr-only"> (opens in new tab)</span></a>
+                </div> 
+            </div>
+        </td>
+        <td align="left" valign="top">
+            <a title="Product detail page help" href="pagehelp/Content/Web_Interface/Data_Products_Search_Tab/Product_Detail_Page.htm" target="_blank">
+            <img src="Images/icon_help.png" id="IMG1" align="left" alt="Product Detail Page Help" style="border-width:0px;" border="0" /></a> <a href="#" class="odeFeedbackLink" onclick="odeFeedback.open(this);return false;" title="Feedback: report a bug or request a feature" aria-label="Feedback: report a bug or request a feature"><i class="fal fa-comment-alt" aria-hidden="true"></i></a>
+            
+            <br />
+            <img id="img3" alt="share" src="images/share40.gif"  
+            style="border-style:none; height:22px; width:22px; padding-top:20px; cursor:pointer;" title="Click for sharing options"
+            onclick="toggleShareWindow();" />
+        </td>               
+    </tr>
+    
+    <tr>
+        <td colspan="2">
+            &nbsp;
+            <a id="lblProdDescAndDataSetDocuments" title="Click to show product description and data set documents" href="javascript:__doPostBack(&#39;lblProdDescAndDataSetDocuments&#39;,&#39;&#39;)"><i class="fa fa-chevron-down" style="width:12px;color:black"></i>&nbsp;<b>Product Description</b> and <b>Data Set Documents</b> (click to show)</a>                            
+
+            
+            
+                </td>
+
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    
+   <div id="ibbBrowse" style="display:inline-block;font-size:105%;padding: 5px 5px 5px 5px;
+        background-color:lightgray; text-align:center;">
+       <a id="ibBrowse" title="View Browse" href="javascript:__doPostBack(&#39;ibBrowse&#39;,&#39;&#39;)" style="text-decoration:none; font-weight:bold;">Browse</a>
+   </div>
+   <div id="ibbFullMetaData" style="display:inline-block;font-size:105%;padding: 5px 5px 5px 5px;
+        background-color:#F5F5F5; text-align:center;">
+       <a id="ibFullMetaData" title="View Meta Data" href="javascript:__doPostBack(&#39;ibFullMetaData&#39;,&#39;&#39;)" style="text-decoration:none;font-weight:bold;">Meta Data</a>
+   </div>
+
+   <div id="ibbLabels" style="display:inline-block;font-size:105%;padding: 5px 5px 5px 5px;
+        background-color:#F5F5F5; text-align:center;">
+       <a id="ibLabels" title="View Labels" onmouseover="setFrameHeightWidth();" href="javascript:__doPostBack(&#39;ibLabels&#39;,&#39;&#39;)" style="text-decoration:none;font-weight:bold;">Label</a>
+   </div>
+      
+   <div id="ibbViewOnMap" style="display:inline-block;font-size:105%;padding: 5px 5px 5px 5px;
+        background-color:#F5F5F5; text-align:center;">
+       <a id="ibViewOnMap" title="View Map Context" href="javascript:__doPostBack(&#39;ibViewOnMap&#39;,&#39;&#39;)" style="text-decoration:none;font-weight:bold;">Map Context</a>
+   </div>
+   <hr  style="border:0 ;border-top: thin solid lightgray;max-width:509px;"/>
+
+             
+                </td>
+            </tr>
+            <tr>
+            <td  colspan="2">
+            <div id="pBrowse">
+		
+                  <table>
+                    <tr>
+                        <td colspan="2">
+                                
+                                
+                               
+                                
+                              
+                                 
+                                
+                                <span id="lblBrowseImageOnly"><b>Browse Image - the image below is not the actual data product<br/></b></span>                               
+                               
+                              
+                              <iframe src="simplezoom.aspx?inImg=\\phobos\projects\ode4\ode-live\ode_mars\lgbrowse\odtgeo_v2\data\odtip2_0051\i565xxpbt\i56585002pbt_lg.png" id="ifDZ" height="400px" width="550px" frameborder="no"></iframe>
+                               
+                               
+                        </td>
+                    </tr>
+                    <tr id="trProductInCart" style="display:none;">
+			<td colspan="2">
+                            <span id="lblProductInCart" style="display:inline-block;"><b>This product is in your cart.</b></span>
+                        </td>
+		</tr>
+		
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="btnAddProductToCart" value="Add Product to Cart" onclick="callResultListAdd();" id="btnAddProductToCart" title="Click to add to cart" class="button primary" />
+                            <input type="submit" name="btnRemoveFromCart" value="Remove Product from Cart" id="btnRemoveFromCart" disabled="disabled" title="Click to remove from cart" class="button" />
+                            &nbsp;&nbsp;<a title="Cart & Download Help" href="pagehelp/Content/Frequently_Asked_Questions/Cart_Help/Cart_Help.htm" target="_blank">Cart & Download Help</a>
+                        </td>
+                     </tr>
+                     
+                
+                    
+                     <tr id="trHostLocationInfo">
+			<td colspan="2">
+                        
+                        
+                        
+                      <table id="tblHostLocationInfo" cellspacing="0" cellpadding="1" bordercolor="#E0E0E0" border="0" width="500">
+				<tr id="tblHostLocationInfoRow2" bgcolor="#E0E0E0">
+					<td><a id="hlExternalLink" href="https://viewer.mars.asu.edu/planetview/inst/themis/I56585002" target="_blank" style="color:#3b47b8;">Link to THEMIS team product site</a></td>
+				</tr>
+			</table>                             
+                         </td>
+		</tr>
+		                     
+
+                     <tr id="trExternalLinkLegend">
+			<td colspan="2">
+                            <img id="imgExternalLinkLegend" title="This link will download the file from another host node." src="images/externalFile2.gif" align="absmiddle" border="0" />
+                            <span id="lblExternalLinkLegend">Indicates a download link from another PDS data node.</span>     
+                            </td>
+		</tr>
+		
+                     <tr id="trAspera" style="display:none;">
+			<td colspan="2">
+                        <!--<div style="width:448px; border-style:solid; border-color:#E0E0E0; border-width:2px; padding:5px 5px 5px 5px;"> -->
+                            <div style="width:485px; border-style:solid; border-color:#E0E0E0; border-width:2px; padding:5px 5px 5px 5px;">
+                                <div style="padding-bottom:10px;">
+                                <b>Aspera Connect Browser Plug-in Option</b>
+                                <br/>Only available for data hosted by the PDS Geosciences Node.
+                                <br/><b>Note:</b> Installing the browser plug-in will require restarting the browser.
+                                </div>
+                                <input name="btnAsperaDownload" type="button" id="btnAsperaDownload" onclick="fileControls.downloadFile(this);" class="button" title="Directly download all product files with Aspera" value="Download All Product &amp; Derived Files with Aspera" />
+                                <!-- value="Download All Product Files with Aspera"-->
+                                
+                                <div style="float:right">
+                                <a title="Product detail page help - Aspera File Download"
+                                href="pagehelp/Content/Web_Interface/Data_Products_Search_Tab/Product_Detail_Page.htm#aspera" target="_blank">
+                                Aspera Download Help</a>
+                                </div><br/>
+                                
+                                
+                                <div id="divStatus"></div>
+                                <div id="divFilesToDownload" style="display:none;"></div>
+                            </div>
+                        </td>
+		</tr>
+		
+
+                        <tr>
+                            <td colspan="2">
+                           
+                            
+
+                            <div id="ibbProductFiles" style="display:inline-block;font-size: 105%;padding: 5px 5px 5px 5px;
+                                background-color:lightgray; text-align:center;">
+                                <a id="ibProductFiles" title="PDS Product Files" href="javascript:__doPostBack(&#39;ibProductFiles&#39;,&#39;&#39;)" style="text-decoration:none;font-weight:bold;">PDS Product Files</a>
+                            </div>
+
+                            <div id="ibbDerivedFiles" style="display:inline-block;font-size: 105%;padding: 5px 5px 5px 5px;
+                                background-color:#F5F5F5; text-align:center;">
+                                <a id="ibDerivedFiles" title="Derived Files" href="javascript:__doPostBack(&#39;ibDerivedFiles&#39;,&#39;&#39;)" style="text-decoration:none;font-weight:bold;">Derived Files</a>
+                            </div>
+                            <hr style="border: 0;border-top: thin solid lightgray;max-width:502px;"/>
+
+                               
+                            
+
+                                    
+                
+                                    
+                                                                    
+                       
+                                                 
+                                
+                                                                                                    
+                                <div id="pProductFiles">
+			
+                                <!-- background-color:Gray;padding:2px;-->
+                                <div id="dProductFiles" 
+                                style="background-color:#E0E0E0;
+                                padding:1px; width:500px; 
+                                float:left; word-wrap:normal;">        
+                                
+                                <div id="dProductFiles1" style="float:left; word-wrap:normal;
+                                float:left;min-height:0px;max-height:350px;">
+                        <div>
+				<table cellspacing="0" align="Left" bordercolor="#E0E0E0" border="0" id="gvProductFilesP" width="500">
+					<tr bgcolor="#E0E0E0">
+						<th align="left" scope="col">Product Files & Labels</th><th align="right" scope="col">KB</th>
+					</tr><tr bgcolor="White">
+						<td align="left" width="290">
+                                                <a id="gvProductFilesP_ctl02_HyperlinkFile" title="Click to download the file from here" onmousedown="recordAct(&#39;productDetail.aspx&#39;,&#39;ExternalLinkClick&#39;,&#39;https://static.mars.asu.edu/pds/ODTGEO_v2/data/odtip2_0051/i565xxpbt/I56585002PBT.IMG&#39;,&#39;False&#39;,&#39;Loading Page for Product_idGeo: 25588707&#39;,&#39;&#39;)" href="https://static.mars.asu.edu/pds/ODTGEO_v2/data/odtip2_0051/i565xxpbt/I56585002PBT.IMG" target="_blank"><span id="gvProductFilesP_ctl02_vafafObject_name" style="word-wrap: normal; word-break: break-all;">i56585002pbt.img</span></a><img id="gvProductFilesP_ctl02_imgExternalLink" title="This link will download the file from another host node." src="images/externalFile2.gif" align="absmiddle" border="0" />
+                                                <span id="gvProductFilesP_ctl02_lblFileDescription" title="File Type"><i><br/>Product Data File with Label</i></span>                                                
+                                            </td><td align="right">2,801</td>
+					</tr>
+				</table>
+			</div>
+                                </div>
+                                
+                              <div id="dProductFilesS" 
+                                    style="float:left; 
+                                        word-wrap:normal; 
+                                        border-top-style:solid; 
+                                        border-top-color:Gray; 
+                                        border-top-width:2px;">
+      							<div>
+
+			</div>                                
+                                </div>                                
+                                
+                                <div id="dProductFiles2" style="float:left; 
+                                        word-wrap:normal; 
+                                        border-top-style:solid; 
+                                        border-top-color:Gray; 
+                                        border-top-width:2px; min-height:0px;max-height:350px;">
+      <div>
+				<table cellspacing="0" align="Left" bordercolor="#E0E0E0" border="0" id="gvProductFilesR" width="500">
+					<tr bgcolor="#E0E0E0">
+						<th align="left" scope="col">Referenced Files</th><th align="right" scope="col">KB</th>
+					</tr><tr bgcolor="White">
+						<td align="left" width="290">
+                                                <a id="gvProductFilesR_ctl02_HyperlinkFile" title="Click to download the file from here" onmousedown="recordAct(&#39;productDetail.aspx&#39;,&#39;ExternalLinkClick&#39;,&#39;https://static.mars.asu.edu/pds/ODTGEO_v2/document/ody_orient_point.txt&#39;,&#39;False&#39;,&#39;Loading Page for Product_idGeo: 25588707&#39;,&#39;&#39;)" href="https://static.mars.asu.edu/pds/ODTGEO_v2/document/ody_orient_point.txt" target="_blank"><span id="gvProductFilesR_ctl02_vafafObject_name" style="word-wrap: normal; word-break: break-all;">ody_orient_point.txt</span></a><img id="gvProductFilesR_ctl02_imgExternalLink" title="This link will download the file from another host node." src="images/externalFile2.gif" align="absmiddle" border="0" />
+                                                <span id="gvProductFilesR_ctl02_lblFileDescription" title="File Type"><i><br/>Description File</i></span>                                                
+                                            </td><td align="right">10</td>
+					</tr>
+				</table>
+			</div>                                
+                                </div>
+                                <!--  overflow-y:scroll; -->
+                                
+                                </div>
+                                
+		</div>
+                             
+                            
+                            </td>
+                         </tr>                          
+                                                 
+                        <tr>
+                            <td colspan="2">
+                                    <div>
+			<table cellspacing="0" rules="cols" bordercolor="#E0E0E0" border="2" id="dvProductDetails" width="502">
+				<tr align="left" bgcolor="#E0E0E0">
+					<td colspan="2"><b>Product Summary<span style='float:right;'><I>PDS</I></span></b></td>
+				</tr><tr bgcolor="White">
+					<td>PDS Version</td><td align="right">3</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Instrument Host ID</td><td align="right">ODY</td>
+				</tr><tr bgcolor="White">
+					<td>Instrument ID</td><td align="right">THEMIS</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Product Type</td><td align="right">IRPBT2</td>
+				</tr><tr bgcolor="White">
+					<td>Observation Time</td><td align="right">2014-09-15T22:50:33.299</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>UTC Start Time</td><td align="right">2014-09-15T22:49:33.299</td>
+				</tr><tr bgcolor="White">
+					<td>UTC Stop Time</td><td align="right">2014-09-15T22:51:33.299</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Start Orbit Number</td><td align="right">56585</td>
+				</tr><tr bgcolor="White">
+					<td>Stop Orbit Number</td><td align="right">56585</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Center Latitude</td><td align="right">-42.136</td>
+				</tr><tr bgcolor="White">
+					<td>Center Longitude</td><td align="right">319.736</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Maximum Latitude</td><td align="right">-39.062</td>
+				</tr><tr bgcolor="White">
+					<td>Minimum Latitude</td><td align="right">-45.21</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Westernmost Longitude</td><td align="right">318.86</td>
+				</tr><tr bgcolor="White">
+					<td>Easternmost Longitude</td><td align="right">320.674</td>
+				</tr><tr bgcolor="#E0E0E0">
+					<td>Producer ID</td><td align="right">ODY_THM_TEAM</td>
+				</tr>
+			</table>
+		</div>
+                        </td>                
+                     </tr>                       
+                 </table>
+                 <!-- end of the table for panel browse-->
+            
+	</div>        
+             
+            
+            
+             
+
+ 
+
+                </td>
+            </tr>                
+       </table>
+        
+        
+        
+        
+        
+        
+        <span id="lblHostInstProdType" style="display:none">ODY THEMIS IRPBT2</span>        
+        
+        
+      
+</div>  
+         <input type="hidden" name="txtScrollLeft" id="txtScrollLeft" />  
+        <input type="hidden" name="txtScrollTop" id="txtScrollTop" />  
+    </div>
+    </form>
+    <script type="text/javascript" language="JavaScript">
+       Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);		 
+       Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);		 
+
+            
+      function BeginRequestHandler(sender, args)
+      {
+        sstchur_SmartScroller_GetCoords();
+//        document.getElementById('btnAddProductToCart').disabled = true;
+
+//        document.getElementById('btnRemoveFromCart').disabled = true;
+//        document.getElementById('btnAddToDownload').disabled = true;
+        
+//        document.getElementById('gvProductFiles').disabled = true;
+//        document.getElementById('btnAssociatedProductsToCart').disabled = true;
+//        document.getElementById('gvRelatedProducts').disabled = true;
+//        document.getElementById('gvRelatedProducts2').disabled = true;
+//        document.getElementById('gvRelatedProducts3').disabled = true;
+        //document.body.disabled = true;
+      } 
+        
+      function EndRequestHandler(sender, args)
+      {
+        if (args.get_error() && args.get_response().get_timedOut()) { 
+             // remember to set errorHandled = true to keep from getting a popup from the AJAX library itself 
+            args.set_errorHandled(true); 
+        }       
+              
+        sstchur_SmartScroller_Scroll();
+        //document.body.disabled = false;
+      }  	
+
+       function sstchur_SmartScroller_GetCoords()
+       {
+          var scrollX, scrollY;
+
+          if (document.all)
+          {
+            if (!document.documentElement.scrollLeft)
+                scrollX = document.body.scrollLeft;
+             else
+                scrollX = document.documentElement.scrollLeft;
+                   
+             if (!document.documentElement.scrollTop)
+             {
+                scrollY = document.body.scrollTop;
+             }
+             else
+             {
+                scrollY = document.documentElement.scrollTop;
+             }
+          }   
+          else
+          {
+             scrollX = window.pageXOffset;
+             scrollY = window.pageYOffset;
+          }
+          document.forms[0].txtScrollLeft.value = scrollX;
+          document.forms[0].txtScrollTop.value = scrollY;
+       }
+           
+       function sstchur_SmartScroller_Scroll()
+       {
+          var x = document.forms[0].txtScrollLeft.value;
+          var y = document.forms[0].txtScrollTop.value;
+
+          window.scrollTo(x, y);
+       }
+ 
+        function displayPDSProductFiles()
+       {
+            if (document.getElementById('dProductFiles').style.display == "none")
+	        {
+		        document.getElementById('dProductFiles').style.display = ""; 
+	        }
+            if (document.getElementById('dDerivedFiles').style.display == "")
+	        {
+		        document.getElementById('dDerivedFiles').style.display = "none"; 
+	        }	        
+       }
+       
+        function displayDerivedFiles()
+       {
+            if (document.getElementById('dDerivedFiles').style.display == "none")
+	        {
+		        document.getElementById('dDerivedFiles').style.display = ""; 
+	        }
+            if (document.getElementById('dProductFiles').style.display == "")
+	        {
+		        document.getElementById('dProductFiles').style.display = "none"; 
+	        }
+
+	    }
+
+	    function setFrameHeightWidth() 
+	    {
+	        if (!document.getElementById("ifProductLabel")) { return; } // iframe is only rendered while the Label tab is shown
+	        // dms 6/28/17
+	        var w = window.innerWidth;
+	        var h = window.innerHeight;
+	      
+	        var currentFrameWidth = document.getElementById("ifProductLabel").width;
+	        var currentFrameHeight = document.getElementById("ifProductLabel").height;
+
+            if (((w - 50) != currentFrameWidth) || ((h - 150) != currentFrameHeight))
+            {
+	            document.getElementById("ifProductLabel").height = h - 140;
+	            document.getElementById("ifProductLabel").width = w - 25;
+	            //https://www.w3schools.com/jsref/prop_iframe_height.asp
+	        }
+	    }
+
+	    function toggleShareWindow() {
+
+	        if (document.getElementById('divShareLinks').style.display === "none") {
+	            document.getElementById('divShareLinks').style.display = "";
+	        }
+	        else {
+	            document.getElementById('divShareLinks').style.display = "none";
+	        }
+	     }
+
+	    function CopyToClipBoard(inputValue) {
+	        //alert('CopyToClipBoard - start ' + inputValue);
+	        document.getElementById("myInput").style.display = "";
+	        document.getElementById("myInput").value = inputValue;
+	        //var copyText = inputValue;
+	        var copyText = document.getElementById("myInput");
+	        copyText.select();
+	        //alert('CopyToClipBoard - middle 1 ');
+	        copyText.setSelectionRange(0, 99999);
+	        //alert('CopyToClipBoard - middle 2 ');
+	        document.execCommand("copy");
+	        document.getElementById('myInput').style.display = "none";
+	        //alert('CopyToClipBoard - end' + copyText.value);
+	    }
+
+	    function myFunction(inVal) {
+	        document.getElementById("myInput").value = inVal;
+	        var copyText = document.getElementById("myInput");
+	        copyText.select();
+	        copyText.setSelectionRange(0, 99999);
+	        document.execCommand("copy");
+	        //alert("Copied the text: " + copyText.value);
+	    }
+    </script>    
+</body>
+</html>

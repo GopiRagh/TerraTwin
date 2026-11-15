@@ -1,0 +1,23 @@
+{
+  "planet": "Mars",
+  "location": "Huygens Crater",
+  "coordinates": {
+    "longitude": 55.4,
+    "latitude": -14.14
+  },
+  "radius_km": 10,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 573.0,
+    "maximum": 1458.0,
+    "area_weighted_mean": 1291.5389610234708,
+    "area_weighted_standard_deviation": 219.58264290492338
+  },
+  "data_quality": {
+    "selected_pixels": 23,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "MGS MOLA MEGDR",
+    "limitation": "NASA reports that bins without direct observations contain interpolated elevations",
+    "source_raster": "megt90n000eb.tif"
+  }
+}

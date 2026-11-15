@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Salar de Atacama",
+  "region_type": "Salt flat / high-altitude basin",
+  "coordinates": {
+    "longitude": -68.25,
+    "latitude": -23.5
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 2298.5,
+    "maximum": 2325.09375,
+    "area_weighted_mean": 2300.9202301014334,
+    "area_weighted_standard_deviation": 0.6581034768851756
+  },
+  "data_quality": {
+    "selected_pixels": 359084,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "nodata_limitation": "The source tile has no explicit NoData value; the selected Salar region contains positive terrain elevations.",
+    "source_raster": "Copernicus_DSM_COG_10_S24_00_W069_00_DEM.tif"
+  }
+}

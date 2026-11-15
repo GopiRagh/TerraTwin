@@ -1,0 +1,41 @@
+{
+    "dataset_id": "MARS_MOLA_MEGDR_001",
+    "dataset_name": "Mars MOLA MEGDR Topography",
+    "source": "NASA PDS Geosciences Node",
+    "planet": "Mars",
+    "instrument": "MOLA",
+    "product_type": "Elevation DEM",
+    "files": {
+        "raster": "megt00n000hb.tif",
+        "label": "megt00n000hb.lbl",
+        "original_image": "megt00n000hb.img"
+    },
+    "format": "GeoTIFF",
+    "width": 11520,
+    "height": 5632,
+    "bands": 1,
+    "data_type": "int16",
+    "elevation_unit": "meters",
+    "spatial_reference": {
+        "coordinate_system": "Planetocentric",
+        "projection": "Simple Cylindrical",
+        "planetary_radius_m": 3396000,
+        "crs_wkt": "GEOGCS[\"unknown\",DATUM[\"unknown\",SPHEROID[\"unknown\",3396000,0]],PRIMEM[\"Reference meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]"
+    },
+    "geographic_bounds": {
+        "west": 0.0,
+        "south": -44.0,
+        "east": 90.0,
+        "north": 0.0
+    },
+    "resolution_degrees": {
+        "longitude": 0.0078125,
+        "latitude": 0.0078125
+    },
+    "elevation_statistics": {
+        "minimum_m": -8208,
+        "maximum_m": 4686,
+        "mean_m": 130.77
+    },
+    "status": "processed"
+}

@@ -1,0 +1,25 @@
+{
+  "planet": "Earth",
+  "location": "Moka Highlands",
+  "region_type": "Volcanic uplands",
+  "coordinates": {
+    "longitude": 8.667,
+    "latitude": 3.333
+  },
+  "radius_km": 10.0,
+  "elevation_features": {
+    "unit": "meters",
+    "minimum": 0.2864224314689636,
+    "maximum": 2014.8577880859375,
+    "area_weighted_mean": 831.2236793164618,
+    "area_weighted_standard_deviation": 463.933982969824
+  },
+  "data_quality": {
+    "selected_pixels": 324430,
+    "weighting": "Cosine of pixel-centre latitude",
+    "source": "Copernicus GLO-30",
+    "dataset_type": "Digital Surface Model (DSM)",
+    "source_raster": "Copernicus_DSM_COG_10_N03_00_E008_00_DEM.tif",
+    "nodata_limitation": "Zero elevation samples were excluded as ocean; the source tile has no explicit NoData value."
+  }
+}
